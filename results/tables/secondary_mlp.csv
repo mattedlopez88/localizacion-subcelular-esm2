@@ -1,0 +1,6 @@
+Representación,Dim.,Parámetros (M),F1-macro test,F1-macro setHARD
+AAC,20,-,0.364,0.212
+DPC,400,-,0.351,0.204
+ESM-2 8M,320,7.4,0.548,0.359
+ESM-2 35M,480,33.3,0.607,0.392
+ESM-2 150M,640,147.7,0.660,0.436

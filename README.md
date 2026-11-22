@@ -62,6 +62,13 @@ uv run python src/03_embed_esm2.py
 
 # Opcional: ESM-2 650M (no corre por defecto)
 uv run python src/03_embed_esm2.py esm2_650m
+
+# Etapa 3: regresión logística (C por CV agrupada) y MLP de chequeo, métricas en results/metrics (~1 min).
+# Sin argumentos omite lo ya calculado; con una representación (p. ej. esm2_650m) la recalcula.
+uv run python src/04_train_eval.py
+
+# Etapa 4: tablas, figuras y results/summary.json (idempotente)
+uv run python src/05_report.py
 ```
 
 ## Uso de IA generativa

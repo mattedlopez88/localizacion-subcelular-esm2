@@ -1,0 +1,231 @@
+{
+ "rep": "esm2_150m",
+ "clf": "mlp",
+ "testset": "sethard",
+ "classes": [
+  "Cell.membrane",
+  "Cytoplasm",
+  "Endoplasmic.reticulum",
+  "Extracellular",
+  "Golgi.apparatus",
+  "Lysosome/Vacuole",
+  "Mitochondrion",
+  "Nucleus",
+  "Peroxisome",
+  "Plastid"
+ ],
+ "dim": 640,
+ "n_train": 11085,
+ "config": {
+  "hidden_layer_sizes": [
+   256
+  ],
+  "class_weight": null,
+  "early_stopping": true,
+  "n_iter": 37
+ },
+ "convergence_warnings": 0,
+ "seconds_total_rep": 15.7,
+ "f1_macro": 0.43620284424136024,
+ "mcc": 0.48667624311970376,
+ "accuracy": 0.5775510204081633,
+ "ci95": {
+  "f1_macro": [
+   0.38104118832229583,
+   0.48256247243471045
+  ],
+  "mcc": [
+   0.43220889900923753,
+   0.5379256145906318
+  ],
+  "accuracy": [
+   0.5306122448979592,
+   0.6224489795918368
+  ]
+ },
+ "n_test": 490,
+ "per_class": {
+  "Cell.membrane": {
+   "f1": 0.45962732919254656,
+   "precision": 0.5873015873015873,
+   "recall": 0.37755102040816324,
+   "support": 98
+  },
+  "Cytoplasm": {
+   "f1": 0.5375494071146245,
+   "precision": 0.5,
+   "recall": 0.5811965811965812,
+   "support": 117
+  },
+  "Endoplasmic.reticulum": {
+   "f1": 0.4406779661016949,
+   "precision": 0.52,
+   "recall": 0.38235294117647056,
+   "support": 34
+  },
+  "Extracellular": {
+   "f1": 0.8181818181818182,
+   "precision": 0.8571428571428571,
+   "recall": 0.782608695652174,
+   "support": 92
+  },
+  "Golgi.apparatus": {
+   "f1": 0.1935483870967742,
+   "precision": 0.16666666666666666,
+   "recall": 0.23076923076923078,
+   "support": 13
+  },
+  "Lysosome/Vacuole": {
+   "f1": 0.08695652173913043,
+   "precision": 0.1,
+   "recall": 0.07692307692307693,
+   "support": 13
+  },
+  "Mitochondrion": {
+   "f1": 0.42857142857142855,
+   "precision": 0.3333333333333333,
+   "recall": 0.6,
+   "support": 10
+  },
+  "Nucleus": {
+   "f1": 0.6696428571428571,
+   "precision": 0.6,
+   "recall": 0.7575757575757576,
+   "support": 99
+  },
+  "Peroxisome": {
+   "f1": 0.0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "support": 3
+  },
+  "Plastid": {
+   "f1": 0.7272727272727273,
+   "precision": 0.7272727272727273,
+   "recall": 0.7272727272727273,
+   "support": 11
+  }
+ },
+ "confusion_matrix": [
+  [
+   37,
+   28,
+   4,
+   6,
+   6,
+   3,
+   2,
+   12,
+   0,
+   0
+  ],
+  [
+   8,
+   68,
+   5,
+   2,
+   5,
+   2,
+   1,
+   25,
+   0,
+   1
+  ],
+  [
+   4,
+   2,
+   13,
+   3,
+   3,
+   0,
+   4,
+   5,
+   0,
+   0
+  ],
+  [
+   9,
+   4,
+   1,
+   72,
+   0,
+   0,
+   1,
+   4,
+   0,
+   1
+  ],
+  [
+   2,
+   4,
+   0,
+   0,
+   3,
+   3,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   3,
+   5,
+   0,
+   1,
+   0,
+   1,
+   0,
+   3,
+   0,
+   0
+  ],
+  [
+   0,
+   2,
+   1,
+   0,
+   0,
+   0,
+   6,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   20,
+   0,
+   0,
+   1,
+   0,
+   3,
+   75,
+   0,
+   0
+  ],
+  [
+   0,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   8
+  ]
+ ]
+}

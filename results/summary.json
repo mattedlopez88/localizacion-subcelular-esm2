@@ -1,0 +1,400 @@
+{
+ "n_per_split": {
+  "train": 11085,
+  "test": 2773,
+  "sethard": 490
+ },
+ "n_per_class_and_split": {
+  "test": {
+   "Nucleus": 808,
+   "Cytoplasm": 508,
+   "Extracellular": 393,
+   "Mitochondrion": 302,
+   "Cell.membrane": 273,
+   "Endoplasmic.reticulum": 173,
+   "Plastid": 152,
+   "Golgi.apparatus": 70,
+   "Lysosome/Vacuole": 64,
+   "Peroxisome": 30
+  },
+  "train": {
+   "Nucleus": 3235,
+   "Cytoplasm": 2034,
+   "Extracellular": 1580,
+   "Mitochondrion": 1208,
+   "Cell.membrane": 1067,
+   "Endoplasmic.reticulum": 689,
+   "Plastid": 605,
+   "Golgi.apparatus": 286,
+   "Lysosome/Vacuole": 257,
+   "Peroxisome": 124
+  },
+  "sethard": {
+   "Cytoplasm": 117,
+   "Nucleus": 99,
+   "Cell.membrane": 98,
+   "Extracellular": 92,
+   "Endoplasmic.reticulum": 34,
+   "Golgi.apparatus": 13,
+   "Lysosome/Vacuole": 13,
+   "Plastid": 11,
+   "Mitochondrion": 10,
+   "Peroxisome": 3
+  }
+ },
+ "best_classic": "dpc",
+ "best_esm": "esm2_150m",
+ "chosen_C_logreg": {
+  "aac": 0.1,
+  "dpc": 0.001,
+  "esm2_8m": 0.01,
+  "esm2_35m": 0.01,
+  "esm2_150m": 0.01
+ },
+ "convergence_warnings": {
+  "aac": 0,
+  "dpc": 0,
+  "esm2_8m": 0,
+  "esm2_35m": 0,
+  "esm2_150m": 0
+ },
+ "logreg": {
+  "aac": {
+   "test": {
+    "f1_macro": 0.3028238900635228,
+    "mcc": 0.2823378591074649,
+    "accuracy": 0.3743238369996394,
+    "ci95": {
+     "f1_macro": [
+      0.2862687976089581,
+      0.3208259054240095
+     ],
+     "mcc": [
+      0.26215190935421595,
+      0.30262330025345674
+     ],
+     "accuracy": [
+      0.35663541291020556,
+      0.39307609087630724
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.1729255384924397,
+    "mcc": 0.15226397341628117,
+    "accuracy": 0.25918367346938775,
+    "ci95": {
+     "f1_macro": [
+      0.14259468971986178,
+      0.203467457716153
+     ],
+     "mcc": [
+      0.11183206381972789,
+      0.19521222539213132
+     ],
+     "accuracy": [
+      0.22040816326530613,
+      0.3
+     ]
+    }
+   }
+  },
+  "dpc": {
+   "test": {
+    "f1_macro": 0.34643565432405915,
+    "mcc": 0.3482487402362277,
+    "accuracy": 0.44139920663541293,
+    "ci95": {
+     "f1_macro": [
+      0.3282678029360059,
+      0.3639970968406397
+     ],
+     "mcc": [
+      0.3277975241877897,
+      0.36906546073113916
+     ],
+     "accuracy": [
+      0.42300757302560404,
+      0.4605120807789398
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.21893862990164986,
+    "mcc": 0.20936576468930587,
+    "accuracy": 0.32040816326530613,
+    "ci95": {
+     "f1_macro": [
+      0.18216113017944924,
+      0.25378570629520253
+     ],
+     "mcc": [
+      0.16424045717149327,
+      0.2548373847989996
+     ],
+     "accuracy": [
+      0.27954081632653066,
+      0.36331632653061224
+     ]
+    }
+   }
+  },
+  "esm2_8m": {
+   "test": {
+    "f1_macro": 0.5538925009085773,
+    "mcc": 0.6008524611821581,
+    "accuracy": 0.6635412910205554,
+    "ci95": {
+     "f1_macro": [
+      0.5330149010277214,
+      0.5741379643967841
+     ],
+     "mcc": [
+      0.5824453740449758,
+      0.6220966016321501
+     ],
+     "accuracy": [
+      0.6473133790119004,
+      0.6815723043635052
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.37053832862020974,
+    "mcc": 0.380130530732155,
+    "accuracy": 0.47551020408163264,
+    "ci95": {
+     "f1_macro": [
+      0.3133164403771687,
+      0.4205737471827739
+     ],
+     "mcc": [
+      0.3308292500891185,
+      0.428917292165001
+     ],
+     "accuracy": [
+      0.4346938775510204,
+      0.5163265306122449
+     ]
+    }
+   }
+  },
+  "esm2_35m": {
+   "test": {
+    "f1_macro": 0.6031430334988934,
+    "mcc": 0.6659679033777238,
+    "accuracy": 0.7194374323837,
+    "ci95": {
+     "f1_macro": [
+      0.5824366513199504,
+      0.6247609391478778
+     ],
+     "mcc": [
+      0.6484241801264896,
+      0.6855657675557535
+     ],
+     "accuracy": [
+      0.7042823656689506,
+      0.7360259646592139
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.4150616543936533,
+    "mcc": 0.43169990036507544,
+    "accuracy": 0.5204081632653061,
+    "ci95": {
+     "f1_macro": [
+      0.3607789267400187,
+      0.46223216424139235
+     ],
+     "mcc": [
+      0.38614388219335355,
+      0.4837850467284723
+     ],
+     "accuracy": [
+      0.4816326530612245,
+      0.5653061224489796
+     ]
+    }
+   }
+  },
+  "esm2_150m": {
+   "test": {
+    "f1_macro": 0.6496731344386673,
+    "mcc": 0.7146070387224482,
+    "accuracy": 0.7605481428056257,
+    "ci95": {
+     "f1_macro": [
+      0.6271539774116214,
+      0.6724741498109409
+     ],
+     "mcc": [
+      0.6973224206376111,
+      0.7329070129277429
+     ],
+     "accuracy": [
+      0.7457627118644068,
+      0.776063829787234
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.4356588584168984,
+    "mcc": 0.4856521128970086,
+    "accuracy": 0.5673469387755102,
+    "ci95": {
+     "f1_macro": [
+      0.3758502426865706,
+      0.48884097023779655
+     ],
+     "mcc": [
+      0.43509224197215374,
+      0.5354790481100314
+     ],
+     "accuracy": [
+      0.5224489795918368,
+      0.6122448979591837
+     ]
+    }
+   }
+  }
+ },
+ "mlp_f1_macro": {
+  "aac": {
+   "test": 0.36360446320647594,
+   "setHARD": 0.2118771735640114
+  },
+  "dpc": {
+   "test": 0.35116987638727826,
+   "setHARD": 0.20439698634746167
+  },
+  "esm2_8m": {
+   "test": 0.5481604182187676,
+   "setHARD": 0.3587549307919634
+  },
+  "esm2_35m": {
+   "test": 0.6065111914954685,
+   "setHARD": 0.3922420207958656
+  },
+  "esm2_150m": {
+   "test": 0.6602516477386937,
+   "setHARD": 0.43620284424136024
+  }
+ },
+ "diff_best_esm_minus_best_classic": {
+  "test": {
+   "diff_f1_macro_observed": 0.3032374801146081,
+   "boot_mean": 0.30330915082369586,
+   "ci95": [
+    0.2790540844442714,
+    0.32743922295037137
+   ]
+  },
+  "setHARD": {
+   "diff_f1_macro_observed": 0.21672022851524853,
+   "boot_mean": 0.21301931926957707,
+   "ci95": [
+    0.15800210575855697,
+    0.27425465491356216
+   ]
+  }
+ },
+ "mcnemar": [
+  {
+   "Comparación": "DPC vs ESM-2 150M",
+   "Conjunto": "test",
+   "b (A acierta, B falla)": 121,
+   "c (A falla, B acierta)": 1006,
+   "Estadístico": "693.395",
+   "p": "8.167e-153",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "DPC vs ESM-2 150M",
+   "Conjunto": "setHARD",
+   "b (A acierta, B falla)": 33,
+   "c (A falla, B acierta)": 154,
+   "Estadístico": "77.005",
+   "p": "1.705e-18",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 8M vs ESM-2 35M",
+   "Conjunto": "test",
+   "b (A acierta, B falla)": 173,
+   "c (A falla, B acierta)": 328,
+   "Estadístico": "47.337",
+   "p": "5.976e-12",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 8M vs ESM-2 35M",
+   "Conjunto": "setHARD",
+   "b (A acierta, B falla)": 36,
+   "c (A falla, B acierta)": 58,
+   "Estadístico": "4.691",
+   "p": "0.03031",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 35M vs ESM-2 150M",
+   "Conjunto": "test",
+   "b (A acierta, B falla)": 165,
+   "c (A falla, B acierta)": 279,
+   "Estadístico": "28.759",
+   "p": "8.197e-08",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 35M vs ESM-2 150M",
+   "Conjunto": "setHARD",
+   "b (A acierta, B falla)": 29,
+   "c (A falla, B acierta)": 52,
+   "Estadístico": "5.975",
+   "p": "0.01451",
+   "Prueba": "chi2 con corrección"
+  }
+ ],
+ "esm_gain_vs_previous": {
+  "ESM-2 8M": "-",
+  "ESM-2 35M": "0.049",
+  "ESM-2 150M": "0.047"
+ },
+ "homology": {
+  "test_vs_train": {
+   "30%": {
+    "n": 239,
+    "pct": 8.62
+   },
+   "40%": {
+    "n": 147,
+    "pct": 5.3
+   },
+   "50%": {
+    "n": 112,
+    "pct": 4.04
+   },
+   "n_query": 2773
+  },
+  "sethard_vs_train": {
+   "30%": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "40%": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "50%": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "n_query": 490
+  },
+  "clusters_total": 9121,
+  "clusters_with_train_and_test": 144,
+  "test_seqs_in_mixed_clusters": 289
+ },
+ "homology_params": "mmseqs easy-search -s 7.5 -e 1e-3 --max-seqs 1000; cobertura query y target >= 0.8; mejor hit por secuencia"
+}
