@@ -1,7 +1,7 @@
 # Localización subcelular de proteínas con ESM-2
 
 ¿Cuánto aporta el tamaño de un modelo de lenguaje de proteínas? Embeddings congelados de ESM-2
-(8M, 35M, 150M) frente a descriptores clásicos (AAC, DPC) en DeepLoc 1.0 (10 clases).
+(8M, 35M, 150M, 650M) frente a descriptores clásicos (AAC, DPC) en DeepLoc 1.0 (10 clases).
 
 Proyecto semestral de Inteligencia Artificial 2. Integrantes: Erick Granda, Joao Gavilanes, Matias Lopez.
 
@@ -45,7 +45,7 @@ presentacion/      entrega2/, entrega3/
 - `data/processed/sethard.csv`: mismas columnas sin `split` ni `cluster`; evaluación estricta.
 - `data/embeddings/{rep}_{pool}.npy`: matriz float32 con las filas en el orden de
   `dataset.csv`; `sethard_{rep}_{pool}.npy` en el orden de `sethard.csv`.
-  `rep` ∈ {aac, dpc, esm2_8m, esm2_35m, esm2_150m}; `pool` ∈ {mean, bos} (solo ESM-2).
+  `rep` ∈ {aac, dpc, esm2_8m, esm2_35m, esm2_150m, esm2_650m}; `pool` ∈ {mean, bos} (solo ESM-2).
 - `results/metrics/`: un JSON por (representación, clasificador, conjunto de prueba).
 
 ## Protocolo experimental (fijo)
