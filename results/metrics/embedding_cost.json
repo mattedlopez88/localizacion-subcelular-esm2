@@ -1,0 +1,62 @@
+{
+  "esm2_8m": {
+    "hf_id": "facebook/esm2_t6_8M_UR50D",
+    "params": 7409081,
+    "dim": 320,
+    "layers": 6,
+    "n_sequences": 13858,
+    "inference_seconds": 259.23,
+    "seconds_per_1000_seqs": 18.706,
+    "peak_mps_memory_bytes": 2516615168,
+    "peak_memory_metric": "torch.mps.driver_allocated_memory (m\u00e1ximo tras cada lote)",
+    "token_budget_per_batch": 4096,
+    "device": "mps",
+    "dtype": "float32",
+    "torch": "2.15.0",
+    "transformers": "5.24.0",
+    "check_batch_vs_single_max_abs_diff": {
+      "mean": 5.662441253662109e-07,
+      "bos": 9.5367431640625e-07
+    }
+  },
+  "esm2_35m": {
+    "hf_id": "facebook/esm2_t12_35M_UR50D",
+    "params": 33269521,
+    "dim": 480,
+    "layers": 12,
+    "n_sequences": 13858,
+    "inference_seconds": 520.49,
+    "seconds_per_1000_seqs": 37.559,
+    "peak_mps_memory_bytes": 2650832896,
+    "peak_memory_metric": "torch.mps.driver_allocated_memory (m\u00e1ximo tras cada lote)",
+    "token_budget_per_batch": 4096,
+    "device": "mps",
+    "dtype": "float32",
+    "torch": "2.15.0",
+    "transformers": "5.24.0",
+    "check_batch_vs_single_max_abs_diff": {
+      "mean": 1.9073486328125e-06,
+      "bos": 1.2516975402832031e-06
+    }
+  },
+  "esm2_150m": {
+    "hf_id": "facebook/esm2_t30_150M_UR50D",
+    "params": 147728601,
+    "dim": 640,
+    "layers": 30,
+    "n_sequences": 13858,
+    "inference_seconds": 954.02,
+    "seconds_per_1000_seqs": 68.842,
+    "peak_mps_memory_bytes": 1823162368,
+    "peak_memory_metric": "torch.mps.driver_allocated_memory (m\u00e1ximo tras cada lote)",
+    "token_budget_per_batch": 4096,
+    "device": "mps",
+    "dtype": "float32",
+    "torch": "2.15.0",
+    "transformers": "5.24.0",
+    "check_batch_vs_single_max_abs_diff": {
+      "mean": 1.430511474609375e-06,
+      "bos": 1.6689300537109375e-06
+    }
+  }
+}

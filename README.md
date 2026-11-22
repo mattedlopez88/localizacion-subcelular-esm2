@@ -52,6 +52,13 @@ Los comandos de cada etapa se documentan aquí a medida que se implementan.
 ```bash
 # Etapa 1: descarga DeepLoc 1.0 y setHARD, clustering al 30 %, chequeo de homología (idempotente, ~1 min)
 uv run python src/01_prepare_data.py
+
+# Etapa 2: AAC y DPC (segundos)
+uv run python src/02_features_classic.py
+
+# Etapa 2: embeddings ESM-2 (8M, 35M, 150M) y costo en results/metrics/embedding_cost.json;
+# idempotente, acepta un modelo (esm2_8m | esm2_35m | esm2_150m). No uses la máquina mientras mide el costo.
+uv run python src/03_embed_esm2.py
 ```
 
 ## Uso de IA generativa
