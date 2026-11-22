@@ -5,6 +5,26 @@
 
 Proyecto semestral de Inteligencia Artificial 2. Integrantes: Erick Granda, Joao Gavilanes, Matias Lopez.
 
+## Entregables
+
+- Entrega 1: [propuesta](informe/entrega1/propuesta.pdf).
+- Entrega 2: [informe](informe/entrega2/main.pdf), [diapositivas](presentacion/entrega2/main.pdf)
+  y [guion](presentacion/entrega2/guion.md).
+
+## Resultados preliminares (Entrega 2)
+
+Regresión logística, una semilla. `test` es la partición oficial de DeepLoc 1.0 y setHARD el
+conjunto estricto de Stärk et al. Tablas completas en `results/tables/`.
+
+| Representación | F1-macro test | Accuracy test | F1-macro setHARD | s / 1000 secuencias |
+|---|---|---|---|---|
+| AAC | 0.303 | 0.374 | 0.173 | – |
+| DPC | 0.346 | 0.441 | 0.219 | – |
+| ESM-2 8M | 0.554 | 0.664 | 0.371 | 18.7 |
+| ESM-2 35M | 0.603 | 0.719 | 0.415 | 37.6 |
+| ESM-2 150M | 0.650 | 0.761 | 0.436 | 68.8 |
+| ESM-2 650M | 0.700 | 0.806 | 0.521 | 210.8 |
+
 ## Estructura
 
 ```
