@@ -57,8 +57,11 @@ uv run python src/01_prepare_data.py
 uv run python src/02_features_classic.py
 
 # Etapa 2: embeddings ESM-2 (8M, 35M, 150M) y costo en results/metrics/embedding_cost.json;
-# idempotente, acepta un modelo (esm2_8m | esm2_35m | esm2_150m). No uses la máquina mientras mide el costo.
+# idempotente, acepta un modelo (esm2_8m | esm2_35m | esm2_150m | esm2_650m). No uses la máquina mientras mide el costo.
 uv run python src/03_embed_esm2.py
+
+# Opcional: ESM-2 650M (no corre por defecto)
+uv run python src/03_embed_esm2.py esm2_650m
 ```
 
 ## Uso de IA generativa

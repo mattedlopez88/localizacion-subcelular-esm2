@@ -13,7 +13,9 @@ from transformers import AutoModel, AutoTokenizer
 ROOT = Path(__file__).resolve().parent.parent
 EMB, COST = ROOT / "data/embeddings", ROOT / "results/metrics/embedding_cost.json"
 MODELS = {"esm2_8m": "facebook/esm2_t6_8M_UR50D", "esm2_35m": "facebook/esm2_t12_35M_UR50D",
-          "esm2_150m": "facebook/esm2_t30_150M_UR50D"}
+          "esm2_150m": "facebook/esm2_t30_150M_UR50D",
+          "esm2_650m": "facebook/esm2_t33_650M_UR50D"}
+DEFAULT = ["esm2_8m", "esm2_35m", "esm2_150m"]  # el 650M solo corre si se pide por argumento
 DEVICE = "mps"
 TOKEN_BUDGET = 4096  # tokens (con padding) por lote: conservador para 24 GB compartidos con el sistema
 MAX_RES = 1022
@@ -80,7 +82,7 @@ def check(model, tok, seqs, dim):
 
 
 def main():
-    names = sys.argv[1:2] or list(MODELS)
+    names = sys.argv[1:2] or DEFAULT
     assert all(n in MODELS for n in names), f"modelo desconocido; opciones: {list(MODELS)}"
     assert torch.backends.mps.is_available()
     seqs = pd.read_csv(ROOT / "data/processed/dataset.csv").sequence.tolist()
