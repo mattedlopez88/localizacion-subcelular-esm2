@@ -25,7 +25,7 @@
   "n_iter": 61
  },
  "convergence_warnings": 0,
- "seconds_total_rep": 13.5,
+ "seconds_total_rep": 14.0,
  "f1_macro": 0.3922420207958656,
  "mcc": 0.4395407972612837,
  "accuracy": 0.5387755102040817,

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PROC, EMB = ROOT / "data/processed", ROOT / "data/embeddings"
 METRICS, PRED = ROOT / "results/metrics", ROOT / "results/predictions"
 REPS = ["aac", "dpc", "esm2_8m", "esm2_35m", "esm2_150m", "esm2_650m"]
-GRID_C = [0.001, 0.01, 0.1, 1, 10]
+GRID_C = [0.0001, 0.001, 0.01, 0.1, 1, 10]
 SEED, N_BOOT, MAX_ITER = 42, 1000, 3000
 
 
