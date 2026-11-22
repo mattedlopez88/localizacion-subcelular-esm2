@@ -1,0 +1,8 @@
+data/raw/
+data/embeddings/
+.venv/
+__pycache__/
+*.pyc
+mmseqs_work/
+tmp_*/
+.DS_Store

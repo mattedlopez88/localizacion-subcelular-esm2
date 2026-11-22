@@ -1,0 +1,36 @@
+{
+  "params": "mmseqs easy-search -s 7.5 -e 1e-3 --max-seqs 1000; cobertura query y target >= 0.8; mejor hit por secuencia",
+  "test_vs_train": {
+    "30%": {
+      "n": 239,
+      "pct": 8.62
+    },
+    "40%": {
+      "n": 147,
+      "pct": 5.3
+    },
+    "50%": {
+      "n": 112,
+      "pct": 4.04
+    },
+    "n_query": 2773
+  },
+  "clusters_total": 9121,
+  "clusters_with_train_and_test": 144,
+  "test_seqs_in_mixed_clusters": 289,
+  "sethard_vs_train": {
+    "30%": {
+      "n": 0,
+      "pct": 0.0
+    },
+    "40%": {
+      "n": 0,
+      "pct": 0.0
+    },
+    "50%": {
+      "n": 0,
+      "pct": 0.0
+    },
+    "n_query": 490
+  }
+}

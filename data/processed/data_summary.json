@@ -1,0 +1,72 @@
+{
+  "mmseqs_version": "19-ab57c",
+  "n_per_split": {
+    "train": 11085,
+    "test": 2773,
+    "sethard": 490
+  },
+  "n_per_class_and_split": {
+    "test": {
+      "Nucleus": 808,
+      "Cytoplasm": 508,
+      "Extracellular": 393,
+      "Mitochondrion": 302,
+      "Cell.membrane": 273,
+      "Endoplasmic.reticulum": 173,
+      "Plastid": 152,
+      "Golgi.apparatus": 70,
+      "Lysosome/Vacuole": 64,
+      "Peroxisome": 30
+    },
+    "train": {
+      "Nucleus": 3235,
+      "Cytoplasm": 2034,
+      "Extracellular": 1580,
+      "Mitochondrion": 1208,
+      "Cell.membrane": 1067,
+      "Endoplasmic.reticulum": 689,
+      "Plastid": 605,
+      "Golgi.apparatus": 286,
+      "Lysosome/Vacuole": 257,
+      "Peroxisome": 124
+    },
+    "sethard": {
+      "Cytoplasm": 117,
+      "Nucleus": 99,
+      "Cell.membrane": 98,
+      "Extracellular": 92,
+      "Endoplasmic.reticulum": 34,
+      "Golgi.apparatus": 13,
+      "Lysosome/Vacuole": 13,
+      "Plastid": 11,
+      "Mitochondrion": 10,
+      "Peroxisome": 3
+    }
+  },
+  "lengths": {
+    "dataset": {
+      "min": 40,
+      "median": 421.0,
+      "p95": 1292.1499999999996,
+      "max": 13100,
+      "gt_1022": 1294
+    },
+    "sethard": {
+      "min": 52,
+      "median": 367.5,
+      "p95": 1473.3499999999992,
+      "max": 5495,
+      "gt_1022": 58
+    }
+  },
+  "discarded_labels_deeploc": {
+    "Cytoplasm-Nucleus": 146
+  },
+  "n_clusters": 9121,
+  "seqs_with_nonstandard_symbols_XUBZO": {
+    "dataset": 34,
+    "sethard": 1
+  },
+  "sethard_available": true,
+  "discarded_labels_sethard": {}
+}
