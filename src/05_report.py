@@ -73,6 +73,25 @@ def results_table(reps, clf, cost, compact):
     return pd.DataFrame(rows)
 
 
+def compact_table(reps, ts, name):
+    """Tabla de una columna IEEE: valor y, debajo, el IC 95 % en letra más pequeña (solo tabular + booktabs)."""
+    keys = [("f1_macro", "F1-macro"), ("mcc", "MCC"), ("accuracy", "Accuracy")]
+    rows, csv = [], []
+    for r in reps:
+        m = load(r, "logreg", ts)
+        ci = [f"{m['ci95'][k][0]:.3f}--{m['ci95'][k][1]:.3f}" for k, _ in keys]
+        rows.append(f"{NAMES[r]} & " + " & ".join(f3(m[k]) for k, _ in keys) + r" \\")
+        rows.append(" & " + " & ".join(r"{\scriptsize " + c + "}" for c in ci) + r" \\")
+        csv.append({"Representación": NAMES[r], **{kn: f3(m[k]) for k, kn in keys},
+                    **{f"{kn} IC95": c for (_, kn), c in zip(keys, ci)}})
+    tex = ("\\begingroup\\small\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{lrrr}\n\\toprule\n"
+           "Representación & F1-macro & MCC & Accuracy \\\\\n\\midrule\n" + "\n".join(rows)
+           + "\n\\bottomrule\n\\end{tabular}\n\\endgroup\n")
+    TAB.mkdir(parents=True, exist_ok=True)
+    (TAB / f"{name}.tex").write_text(tex)
+    pd.DataFrame(csv).to_csv(TAB / f"{name}.csv", index=False)
+
+
 def paired_bootstrap_diff(y, pa, pb, n_classes):
     """Diferencia F1-macro (b - a) con IC 95 % percentil; mismos remuestreos para ambos modelos."""
     rng = np.random.default_rng(SEED)
@@ -114,7 +133,9 @@ def fig_f1_vs_params(esm, cls_best, cost):
     ax.set_xlabel("Parámetros del modelo (escala log)")
     ax.set_ylabel("F1-macro")
     ax.set_ylim(0, 0.8)
-    ax.legend(frameon=False, fontsize=7, ncol=2, loc="upper left", handlelength=1.6, columnspacing=0.8)
+    # fuera del área de datos (debajo del eje) para no tapar curvas
+    ax.legend(frameon=False, fontsize=7, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.28),
+              handlelength=1.6, columnspacing=0.8)
     save_fig(fig, "fig_f1_vs_params")
 
 
@@ -195,6 +216,8 @@ def main():
     # tablas
     main_df = results_table(reps, "logreg", cost, compact=False)
     save_table(main_df, "main_results")
+    compact_table(reps, "test", "main_results_test")
+    compact_table(reps, "sethard", "main_results_sethard")
     save_table(results_table(reps, "mlp", cost, compact=True), "secondary_mlp")
 
     pc = {r: load(r, "logreg", "test")["per_class"] for r in reps}
@@ -207,9 +230,10 @@ def main():
 
     eff = []
     for i, r in enumerate(esm):
-        eff.append({"Modelo": NAMES[r], "Parámetros (M)": f"{cost[r]['params'] / 1e6:.1f}",
+        eff.append({"Modelo": NAMES[r], "Capas": cost[r]["layers"], "Dim.": cost[r]["dim"],
+                    "Parámetros (M)": f"{cost[r]['params'] / 1e6:.1f}",
                     "s / 1000 seq.": f"{cost[r]['seconds_per_1000_seqs']:.1f}",
-                    "Memoria pico (GB)": f"{cost[r]['peak_mps_memory_bytes'] / 1e9:.2f}",
+                    "Total inferencia (s)": f"{cost[r]['inference_seconds']:.0f}",
                     "F1-macro test": f3(f1[r]),
                     "Ganancia vs anterior": f3(f1[r] - f1[esm[i - 1]]) if i else "-"})
     save_table(pd.DataFrame(eff), "efficiency")
@@ -237,7 +261,13 @@ def main():
         "mlp_f1_macro": {r: {SETS[ts]: load(r, "mlp", ts)["f1_macro"] for ts in SETS} for r in reps},
         "diff_best_esm_minus_best_classic": diffs,
         "mcnemar": mc.to_dict("records"),
-        "esm_gain_vs_previous": {r["Modelo"]: r["Ganancia vs anterior"] for r in eff},
+        "esm_gain_f1_macro_vs_previous": {
+            SETS[ts]: {f"{NAMES[b]} vs {NAMES[a]}": load(b, "logreg", ts)["f1_macro"] - load(a, "logreg", ts)["f1_macro"]
+                       for a, b in zip(esm[:-1], esm[1:])} for ts in SETS},
+        "esm_time_ratio_vs_previous": {
+            f"{NAMES[b]} vs {NAMES[a]}": {
+                "s_per_1000": cost[b]["seconds_per_1000_seqs"] / cost[a]["seconds_per_1000_seqs"],
+                "params": cost[b]["params"] / cost[a]["params"]} for a, b in zip(esm[:-1], esm[1:])},
         "homology": {k: hom[k] for k in ("test_vs_train", "sethard_vs_train", "clusters_total",
                                           "clusters_with_train_and_test", "test_seqs_in_mixed_clusters")},
         "homology_params": hom["params"],

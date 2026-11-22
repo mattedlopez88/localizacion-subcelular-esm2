@@ -1,4 +1,5 @@
-Modelo,Parámetros (M),s / 1000 seq.,Memoria pico (GB),F1-macro test,Ganancia vs anterior
-ESM-2 8M,7.4,18.7,2.52,0.554,-
-ESM-2 35M,33.3,37.6,2.65,0.603,0.049
-ESM-2 150M,147.7,68.8,1.82,0.650,0.047
+Modelo,Capas,Dim.,Parámetros (M),s / 1000 seq.,Total inferencia (s),F1-macro test,Ganancia vs anterior
+ESM-2 8M,6,320,7.4,18.7,259,0.554,-
+ESM-2 35M,12,480,33.3,37.6,520,0.603,0.049
+ESM-2 150M,30,640,147.7,68.8,954,0.650,0.047
+ESM-2 650M,33,1280,649.4,210.8,2921,0.700,0.050

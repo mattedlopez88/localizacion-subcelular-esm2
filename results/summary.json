@@ -43,20 +43,22 @@
   }
  },
  "best_classic": "dpc",
- "best_esm": "esm2_150m",
+ "best_esm": "esm2_650m",
  "chosen_C_logreg": {
   "aac": 0.1,
   "dpc": 0.001,
   "esm2_8m": 0.01,
   "esm2_35m": 0.01,
-  "esm2_150m": 0.01
+  "esm2_150m": 0.01,
+  "esm2_650m": 0.01
  },
  "convergence_warnings": {
   "aac": 0,
   "dpc": 0,
   "esm2_8m": 0,
   "esm2_35m": 0,
-  "esm2_150m": 0
+  "esm2_150m": 0,
+  "esm2_650m": 0
  },
  "logreg": {
   "aac": {
@@ -258,6 +260,46 @@
      ]
     }
    }
+  },
+  "esm2_650m": {
+   "test": {
+    "f1_macro": 0.7001340700819997,
+    "mcc": 0.7676011373082048,
+    "accuracy": 0.8059862964298593,
+    "ci95": {
+     "f1_macro": [
+      0.6760876630574749,
+      0.7252293363063546
+     ],
+     "mcc": [
+      0.7514854506117468,
+      0.785204389895225
+     ],
+     "accuracy": [
+      0.7919221060223585,
+      0.8211413631446087
+     ]
+    }
+   },
+   "setHARD": {
+    "f1_macro": 0.5210282153900294,
+    "mcc": 0.5485207199540849,
+    "accuracy": 0.6244897959183674,
+    "ci95": {
+     "f1_macro": [
+      0.44198363237571253,
+      0.5874229575957041
+     ],
+     "mcc": [
+      0.49754800958472645,
+      0.5974313530210581
+     ],
+     "accuracy": [
+      0.5815816326530612,
+      0.6653061224489796
+     ]
+    }
+   }
   }
  },
  "mlp_f1_macro": {
@@ -280,43 +322,47 @@
   "esm2_150m": {
    "test": 0.6602516477386937,
    "setHARD": 0.43620284424136024
+  },
+  "esm2_650m": {
+   "test": 0.6872615076675169,
+   "setHARD": 0.45517362651286347
   }
  },
  "diff_best_esm_minus_best_classic": {
   "test": {
-   "diff_f1_macro_observed": 0.3032374801146081,
-   "boot_mean": 0.30330915082369586,
+   "diff_f1_macro_observed": 0.35369841575794053,
+   "boot_mean": 0.35353040496655685,
    "ci95": [
-    0.2790540844442714,
-    0.32743922295037137
+    0.32422819849043233,
+    0.3821657629506191
    ]
   },
   "setHARD": {
-   "diff_f1_macro_observed": 0.21672022851524853,
-   "boot_mean": 0.21301931926957707,
+   "diff_f1_macro_observed": 0.30208958548837955,
+   "boot_mean": 0.2936080027956841,
    "ci95": [
-    0.15800210575855697,
-    0.27425465491356216
+    0.2202838529250181,
+    0.37409525605637284
    ]
   }
  },
  "mcnemar": [
   {
-   "Comparación": "DPC vs ESM-2 150M",
+   "Comparación": "DPC vs ESM-2 650M",
    "Conjunto": "test",
-   "b (A acierta, B falla)": 121,
-   "c (A falla, B acierta)": 1006,
-   "Estadístico": "693.395",
-   "p": "8.167e-153",
+   "b (A acierta, B falla)": 103,
+   "c (A falla, B acierta)": 1114,
+   "Estadístico": "838.209",
+   "p": "2.661e-184",
    "Prueba": "chi2 con corrección"
   },
   {
-   "Comparación": "DPC vs ESM-2 150M",
+   "Comparación": "DPC vs ESM-2 650M",
    "Conjunto": "setHARD",
-   "b (A acierta, B falla)": 33,
-   "c (A falla, B acierta)": 154,
-   "Estadístico": "77.005",
-   "p": "1.705e-18",
+   "b (A acierta, B falla)": 29,
+   "c (A falla, B acierta)": 178,
+   "Estadístico": "105.816",
+   "p": "8.089e-25",
    "Prueba": "chi2 con corrección"
   },
   {
@@ -354,12 +400,51 @@
    "Estadístico": "5.975",
    "p": "0.01451",
    "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 150M vs ESM-2 650M",
+   "Conjunto": "test",
+   "b (A acierta, B falla)": 143,
+   "c (A falla, B acierta)": 269,
+   "Estadístico": "37.925",
+   "p": "7.353e-10",
+   "Prueba": "chi2 con corrección"
+  },
+  {
+   "Comparación": "ESM-2 150M vs ESM-2 650M",
+   "Conjunto": "setHARD",
+   "b (A acierta, B falla)": 27,
+   "c (A falla, B acierta)": 55,
+   "Estadístico": "8.890",
+   "p": "0.002867",
+   "Prueba": "chi2 con corrección"
   }
  ],
- "esm_gain_vs_previous": {
-  "ESM-2 8M": "-",
-  "ESM-2 35M": "0.049",
-  "ESM-2 150M": "0.047"
+ "esm_gain_f1_macro_vs_previous": {
+  "test": {
+   "ESM-2 35M vs ESM-2 8M": 0.04925053259031609,
+   "ESM-2 150M vs ESM-2 35M": 0.04653010093977383,
+   "ESM-2 650M vs ESM-2 150M": 0.05046093564333243
+  },
+  "setHARD": {
+   "ESM-2 35M vs ESM-2 8M": 0.044523325773443534,
+   "ESM-2 150M vs ESM-2 35M": 0.020597204023245108,
+   "ESM-2 650M vs ESM-2 150M": 0.08536935697313103
+  }
+ },
+ "esm_time_ratio_vs_previous": {
+  "ESM-2 35M vs ESM-2 8M": {
+   "s_per_1000": 2.0078584411418796,
+   "params": 4.490370803072608
+  },
+  "ESM-2 150M vs ESM-2 35M": {
+   "s_per_1000": 1.8329028994382173,
+   "params": 4.440358519138282
+  },
+  "ESM-2 650M vs ESM-2 150M": {
+   "s_per_1000": 3.0616774643386306,
+   "params": 4.395905576876071
+  }
  },
  "homology": {
   "test_vs_train": {
