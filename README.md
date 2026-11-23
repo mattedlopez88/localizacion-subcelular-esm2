@@ -85,5 +85,4 @@ uv run python src/05_report.py
 
 ## Uso de IA generativa
 
-Se usó Claude (Anthropic) para programar el pipeline y redactar borradores del informe, bajo
-dirección y revisión del grupo. El detalle por sección está en el informe de cada entrega.
+Se usó Claude para asistir en la generación de código e investigación.
