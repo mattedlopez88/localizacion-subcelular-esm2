@@ -5,12 +5,6 @@
 
 Proyecto semestral de Inteligencia Artificial 2. Integrantes: Erick Granda, Joao Gavilanes, Matias Lopez.
 
-## Entregables
-
-- Entrega 1: [propuesta](informe/entrega1/propuesta.pdf).
-- Entrega 2: [informe](informe/entrega2/main.pdf), [diapositivas](presentacion/entrega2/main.pdf)
-  y [guion](presentacion/entrega2/guion.md).
-
 ## Resultados preliminares (Entrega 2)
 
 Regresión logística, una semilla. `test` es la partición oficial de DeepLoc 1.0 y setHARD el
@@ -33,8 +27,6 @@ data/processed/    dataset.csv, sethard.csv, clusters e informe de homología
 data/embeddings/   matrices .npy por representación (no versionadas)
 src/               pipeline, un script por etapa
 results/           metrics/, tables/, figures/ (versionados)
-informe/           entrega1/, entrega2/, entrega3/ (LaTeX, plantilla IEEE)
-presentacion/      entrega2/, entrega3/
 ```
 
 ## Contrato entre etapas
@@ -94,4 +86,4 @@ uv run python src/05_report.py
 ## Uso de IA generativa
 
 Se usó Claude (Anthropic) para programar el pipeline y redactar borradores del informe, bajo
-dirección y revisión del grupo. El detalle por sección está en cada informe.
+dirección y revisión del grupo. El detalle por sección está en el informe de cada entrega.

@@ -6,3 +6,5 @@ __pycache__/
 mmseqs_work/
 tmp_*/
 .DS_Store
+informe/
+presentacion/
